@@ -1,0 +1,24 @@
+{
+	"resource": {
+		"aws_s3_bucket": {
+			"allowed": {
+				"acl": "private",
+				"bucket": "my-tutorial-bucket",
+				"tags": {
+					"Team": "rocket"
+				}
+			},
+			"denied_1": {
+				"acl": "private",
+				"bucket": "my-tutorial-bucket"
+			},
+			"denied_2": {
+				"acl": "private",
+				"bucket": "my-tutorial-bucket",
+				"tags": {
+					"owning_team": "abc-123"
+				}
+			}
+		}
+	}
+}

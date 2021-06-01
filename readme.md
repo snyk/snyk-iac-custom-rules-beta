@@ -10,6 +10,12 @@
 1. [Exploring Rego](###Exploring-rego)
 1. [Support](#Support)
 1. [Additional Resources](#Additional-resources)
+
+**Writing & Using Custom Rules**
+
+1. [Writing a rule](writing.md)
+1. [Distribution](distribution.md)
+1. [Execution](execution.md)
 1. [Worked Examples](examples/readme.md)
 
 # Snyk Infrastructure as Code - Custom Rules
