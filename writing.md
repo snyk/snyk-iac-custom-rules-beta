@@ -261,10 +261,6 @@ If we break this down:
 
 `custom.rego` is the filename that contains our logic. Currently we have one file to reference, this could also be a directory of files.
 
-### Example
+If successful, you should see a file created called `custom.tar.gz`
 
-If successful, you should see the following output
-
-```bash
-
-```
+Next [read the documentation on how to execute](execution.md)
