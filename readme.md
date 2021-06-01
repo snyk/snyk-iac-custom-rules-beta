@@ -1,5 +1,21 @@
 # Snyk Infrastructure as Code - Custom Rules
 
+## Table of contents
+
+1. [Background](##Background)
+1. [Overview](##Feature-Overview)
+1. [Workflow](##Workflow)
+1. [Getting Started](##Getting-Started)
+1. [Pre-Requisites](###pre-requisites)
+1. [Exploring Rego](###Exploring-rego)
+1. [Support](#Support)
+1. [Additional Resources](#Additional-resources)
+1. [Worked Examples](examples/readme.md)
+
+# Snyk Infrastructure as Code - Custom Rules
+
+## Background
+
 The Snyk Infrastructure as Code product can scan configuration files for any security misconfigurations, via the CLI or by importing a repository from GitHub.
 
 Today we support scanning Kubernetes, Helm, Terraform & CloudFormation configuration files.
@@ -14,11 +30,11 @@ This functionality is currently available in **invite-only beta**
 
 This means that support is provided on a case-by-case basis and should be directed through your account team to Ben Laplanche the Product Manager for Snyk IaC.
 
-## Custom Rules Overview
+## Feature Overview
 
-Snyk Infrastructure as Code is based upon Open Policy Agent and uses a language called Rego All of the Snyk provided rules are written in Rego.
+Snyk Infrastructure as Code is based upon Open Policy Agent and uses a language called Rego. All of the Snyk provided rules are written in [Rego](https://www.openpolicyagent.org/docs/latest/#rego).
 
-Any custom rules that you write will be written in Rego and can be written locally either in your IDE of choice or using the online [rego playground](https://play.openpolicyagent.org/)
+Any custom rules that you write will be written in [Rego](https://www.openpolicyagent.org/docs/latest/#rego) and can be written locally either in your IDE of choice or using the online [rego playground](https://play.openpolicyagent.org/)
 
 Rules can be written for any configuration format that Snyk IaC supports, currently on the CLI this is
 
@@ -37,7 +53,21 @@ Ultimately any use-case that can be codified into rego is supported. The limits 
 
 Today, custom rules will only be supported for execution via the Snyk IaC CLI. Support for running these against repositories imported from GitHub will be added in the future.
 
+## Workflow
+
+![example workflow](assets/workflow.png)
+
+There are two key activities to writing custom rules:
+
+1. Writing & Distribution - This will typically be the Security Team and we expect to be handled centrally. In this activity, the relevant business logic is identified and codified into a rule which is then compiled and distributed to be executed via the Snyk IaC CLI.
+
+2. Execution - Using the Snyk IaC CLI the custom rules are then executed alongside the Snyk provided rules to provide a comoprehensive security view.
+
+for example `$ snyk iac test my-kubernetes-deployment.yaml --rules=custom.tar.gz` targets a kubernetes deployment manifest and references a local artefact which contains your custom rules.
+
 ## Getting Started
+
+Before you proceed to writing your first rule, we recommend you ensure you've met the pre-requisities outlined below and spent some time exploring the Rego language.
 
 ### Pre-requisites
 
@@ -56,3 +86,11 @@ You can use the drop down at the top of the rego playground to find worked examp
 
 - Kubernetes - Hello World
 - Kubernetes - Label Existence
+
+# Support
+
+This feature is currently in beta - support is provided on a best case effort via the product team. Please raise any issues through your customer slack channel to Ben Laplanche the Snyk IaC Product Manager.
+
+# Additional Resources
+
+- [Open Policy Agent Slack](https://slack.openpolicyagent.org/) - There is an active slack community who are willing to help with Rego queries.
