@@ -100,3 +100,7 @@ This feature is currently in beta - support is provided on a best case effort vi
 # Additional Resources
 
 - [Open Policy Agent Slack](https://slack.openpolicyagent.org/) - There is an active slack community who are willing to help with Rego queries.
+
+# License
+
+Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
