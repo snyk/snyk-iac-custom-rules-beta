@@ -1,3 +1,6 @@
+# WARNING
+This repository is archived.
+
 # Snyk Infrastructure as Code - Custom Rules
 
 ## Table of contents
